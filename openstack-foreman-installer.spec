@@ -1,6 +1,7 @@
 %{?scl:%scl_package openstack-foreman-installer}
 %{!?scl:%global pkg_name %{name}}
 %global rel 1
+%global upstream_name astapor
 
 %global homedir /usr/share/openstack-foreman-installer
 
@@ -11,9 +12,9 @@ Summary:	Installer & Configuration tool for OpenStack
 
 Group:		Applications/System
 License:	GPLv2
-URL:		https://github.com/redhat-openstack/astapor
+URL:		https://github.com/redhat-openstack/%{upstream_name}
 # source is in github, see corresponding git tags
-Source0: https://github.com/redhat-openstack/astapor/archive/openstack-foreman-installer-%{version}.tar.gz
+Source0: https://github.com/redhat-openstack/%{upstream_name}/archive/openstack-foreman-installer-%{version}.tar.gz
 
 Requires: %{?scl_prefix}ruby
 Requires: puppet >= 2.7
@@ -30,7 +31,7 @@ Tools for configuring The Foreman for provisioning & configuration of
 OpenStack.
 
 %prep
-%setup -n %{pkg_name}-%{version} -q
+%setup -n %{upstream_name}-%{pkg_name}-%{version} -q
 
 %build
 
