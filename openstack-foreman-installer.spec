@@ -1,26 +1,26 @@
 %{?scl:%scl_package openstack-foreman-installer}
 %{!?scl:%global pkg_name %{name}}
+%global rel 1
 
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	0.0.18
-Release:	3%{?dist}
+Version:	0.0.19
+Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
 Group:		Applications/System
 License:	GPLv2
-URL:		https://github.com/jsomara/astapor
+URL:		https://github.com/redhat-openstack/astapor
 # source is in github, see corresponding git tags
-Source0: http://file.rdu.redhat.com/~jomara/openstack-foreman-installer-%{version}.tar.gz
-
-Patch0: 0001-BZ978568-Fixing-setsebool-for-httpd-on-controller-no.patch
+Source0: https://github.com/redhat-openstack/astapor/archive/openstack-foreman-installer-%{version}.tar.gz
 
 Requires: %{?scl_prefix}ruby
-Requires: %{?scl_prefix}puppet
+Requires: puppet >= 2.7
 Requires: packstack-modules-puppet
 Requires: foreman >= 1.1
 Requires: foreman-mysql >= 1.1
+Requires: foreman-installer >= 1.2.1
 Requires: %{?scl_prefix}rubygem-foreman_openstack_simplify
 Requires: mysql-server
 Requires: augeas
@@ -31,7 +31,6 @@ OpenStack.
 
 %prep
 %setup -n %{pkg_name}-%{version} -q
-%patch0 -p1
 
 %build
 
@@ -43,13 +42,11 @@ install -m 0644 bin/seeds.rb %{buildroot}%{homedir}/bin
 install -m 0755 bin/foreman_server.sh %{buildroot}%{homedir}/bin
 install -m 0644 bin/foreman-params.json %{buildroot}%{homedir}/bin
 install -d -m 0755 %{buildroot}%{homedir}/puppet/modules
-cp -Rp puppet/* %{buildroot}%{homedir}/puppet/modules/
 install -d -m 0755 %{buildroot}%{homedir}/config
 install -m 0644 config/broker-ruby %{buildroot}%{homedir}/config
 install -m 0644 config/database.yml %{buildroot}%{homedir}/config
 install -m 0775 config/dbmigrate %{buildroot}%{homedir}/config
-install -d -m 0755 %{buildroot}%{homedir}/installer_puppet
-cp -Rp installer_puppet/* %{buildroot}%{homedir}/installer_puppet/
+install -d -m 0755 %{buildroot}%{homedir}/puppet
 
 %files
 %{homedir}/
@@ -64,10 +61,11 @@ cp -Rp installer_puppet/* %{buildroot}%{homedir}/installer_puppet/
 %{homedir}/config/broker-ruby
 %{homedir}/config/dbmigrate
 %{homedir}/config/database.yml
-%{homedir}/installer_puppet/
-%{homedir}/installer_puppet/*
 
 %changelog
+* Tue Aug 27 2013 Jason Guiditta <jguiditt@redhat.com> 0.0.19-1
+- Fixes for Havanna in RDO
+
 * Wed Aug 7 2013 Pádraig Brady <pbrady@redhat.com> 0.0.18-3
 - Depend on upstream foreman packages
 
