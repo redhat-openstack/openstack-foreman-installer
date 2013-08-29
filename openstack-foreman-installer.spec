@@ -1,7 +1,6 @@
 %{?scl:%scl_package openstack-foreman-installer}
 %{!?scl:%global pkg_name %{name}}
-%global rel 1
-%global upstream_name astapor
+%global rel 2
 
 %global homedir /usr/share/openstack-foreman-installer
 
@@ -23,7 +22,7 @@ Requires: packstack-modules-puppet
 Requires: foreman >= 1.1
 Requires: foreman-mysql >= 1.1
 Requires: foreman-installer >= 1.2.1
-Requires: %{?scl_prefix}rubygem-foreman_openstack_simplify
+Requires: foreman-plugin-simplify
 Requires: mysql-server
 Requires: augeas
 
@@ -65,7 +64,7 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
-* Tue Aug 27 2013 Jason Guiditta <jguiditt@redhat.com> 0.0.19-1
+* Tue Aug 27 2013 Jason Guiditta <jguiditt@redhat.com> 0.0.19-2
 - Fixes for Havanna in RDO
 
 * Wed Aug 7 2013 Pádraig Brady <pbrady@redhat.com> 0.0.18-3
