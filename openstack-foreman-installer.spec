@@ -1,5 +1,6 @@
 %{?scl:%scl_package openstack-foreman-installer}
 %{!?scl:%global pkg_name %{name}}
+%global upstream_name astapor
 %global rel 2
 
 %global homedir /usr/share/openstack-foreman-installer
