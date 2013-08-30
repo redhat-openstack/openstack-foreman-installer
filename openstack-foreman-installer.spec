@@ -44,7 +44,7 @@ install -m 0644 bin/seeds.rb %{buildroot}%{homedir}/bin
 install -m 0755 bin/foreman_server.sh %{buildroot}%{homedir}/bin
 install -m 0644 bin/foreman-params.json %{buildroot}%{homedir}/bin
 install -d -m 0755 %{buildroot}%{homedir}/puppet/modules
-cp -Rp puppet/* %{buildroot}%{homedir}/puppet/modules/
+cp -Rp puppet/modules/* %{buildroot}%{homedir}/puppet/modules/
 install -d -m 0755 %{buildroot}%{homedir}/config
 install -m 0644 config/broker-ruby %{buildroot}%{homedir}/config
 install -m 0644 config/database.yml %{buildroot}%{homedir}/config
