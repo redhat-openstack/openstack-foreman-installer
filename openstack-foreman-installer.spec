@@ -1,7 +1,7 @@
 %{?scl:%scl_package openstack-foreman-installer}
 %{!?scl:%global pkg_name %{name}}
 %global upstream_name astapor
-%global rel 2
+%global rel 3
 
 %global homedir /usr/share/openstack-foreman-installer
 
@@ -44,6 +44,7 @@ install -m 0644 bin/seeds.rb %{buildroot}%{homedir}/bin
 install -m 0755 bin/foreman_server.sh %{buildroot}%{homedir}/bin
 install -m 0644 bin/foreman-params.json %{buildroot}%{homedir}/bin
 install -d -m 0755 %{buildroot}%{homedir}/puppet/modules
+cp -Rp puppet/* %{buildroot}%{homedir}/puppet/modules/
 install -d -m 0755 %{buildroot}%{homedir}/config
 install -m 0644 config/broker-ruby %{buildroot}%{homedir}/config
 install -m 0644 config/database.yml %{buildroot}%{homedir}/config
@@ -65,7 +66,7 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
-* Tue Aug 27 2013 Jason Guiditta <jguiditt@redhat.com> 0.0.19-2
+* Tue Aug 27 2013 Jason Guiditta <jguiditt@redhat.com> 0.0.19-3
 - Fixes for Havanna in RDO
 
 * Wed Aug 7 2013 Pádraig Brady <pbrady@redhat.com> 0.0.18-3
