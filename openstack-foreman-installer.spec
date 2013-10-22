@@ -1,12 +1,12 @@
 %{?scl:%scl_package openstack-foreman-installer}
 %{!?scl:%global pkg_name %{name}}
 %global upstream_name astapor
-%global rel 3
+%global rel 1
 
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	0.0.19
+Version:	0.0.20
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -66,6 +66,13 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Tue Oct 22 2013 Jason Guiditta <jguiditt@redhat.com> 0.0.20-1
+- Add support for either neutron or nova networking hostgroups.
+- Add Cinder, Heat, Ceilometer to Quickstack
+- Initial Load Balanced api support
+- Initial clustered mysql nodes (pacemaker cluster)
+- Set puppet data type in seeds.rb
+
 * Tue Aug 27 2013 Jason Guiditta <jguiditt@redhat.com> 0.0.19-3
 - Fixes for Havanna in RDO
 
