@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	0.0.20
+Version:	0.0.21
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -22,7 +22,7 @@ Requires: puppet >= 2.7
 Requires: packstack-modules-puppet
 Requires: foreman >= 1.1
 Requires: foreman-mysql >= 1.1
-Requires: foreman-installer >= 1.2.1
+Requires: foreman-installer >= 1.3
 Requires: foreman-plugin-simplify
 Requires: mysql-server
 Requires: augeas
@@ -66,6 +66,12 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Fri Oct 25 2013 Jason Guiditta <jguiditt@redhat.com> 0.0.21-1
+- Configuration improvements for ha mysql
+- Update installer to work with foreman 1.3
+- Add horizon support to Load Balancer
+- Add plugin for cisco nexus to neutron setups
+
 * Tue Oct 22 2013 Jason Guiditta <jguiditt@redhat.com> 0.0.20-1
 - Add support for either neutron or nova networking hostgroups.
 - Add Cinder, Heat, Ceilometer to Quickstack
