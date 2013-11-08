@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	0.0.21
+Version:	0.0.22
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -66,6 +66,13 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Fri Nov 8 2013 Jason Guiditta <jguiditt@redhat.com> 0.0.22-1
+- Fix foreman-proxy port conflict
+- More installer tweaks
+- Neutron, Heat user fixes
+- Added external ovs bridge creation
+- Remove Clusterlabs repo
+
 * Fri Oct 25 2013 Jason Guiditta <jguiditt@redhat.com> 0.0.21-1
 - Configuration improvements for ha mysql
 - Update installer to work with foreman 1.3
