@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	0.0.22
+Version:	0.0.23
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -66,6 +66,12 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Wed Dec 4 2013 Jason Guiditta <jguiditt@redhat.com> 0.0.23-1
+- Refactored Host Groups to make smaller base list
+- Gluster backend support for cinder and glance
+- Add numerous new config flags
+- Add initial neutron vlan support/configs
+
 * Fri Nov 8 2013 Jason Guiditta <jguiditt@redhat.com> 0.0.22-1
 - Fix foreman-proxy port conflict
 - More installer tweaks
