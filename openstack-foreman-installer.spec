@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	0.0.23
+Version:	0.0.24
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -66,6 +66,14 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Mon Dec 9 2013 Jason Guiditta <jguiditt@redhat.com> 0.0.24-1
+- BZ #1038281 - Do not disable selinux on openstack foreman installer.
+- BZ #1038772 - Remove Tech Preview text.
+- Add Swift Proxy to Controllers, new hostgroup for swift storage.
+- Tweak host group configuration/naming.
+- Load balancer cleanup, add Swift Proxy.
+- Update to work with latest packstack-puppet updates.
+
 * Wed Dec 4 2013 Jason Guiditta <jguiditt@redhat.com> 0.0.23-1
 - Refactored Host Groups to make smaller base list
 - Gluster backend support for cinder and glance
