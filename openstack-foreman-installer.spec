@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	0.0.24
+Version:	0.0.25
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -66,6 +66,11 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Mon Dec 10 2013 Jason Guiditta <jguiditt@redhat.com> 0.0.25-1
+- BZ #1039661 Fix manifests to work with updated puppet modules
+- BZ #1039698 add IPAPPEND 2 to pxe template
+- BZ #1040021 Fix enable/disable of heat_cfg and heat_cloudwatch
+
 * Mon Dec 9 2013 Jason Guiditta <jguiditt@redhat.com> 0.0.24-1
 - BZ #1038281 - Do not disable selinux on openstack foreman installer.
 - BZ #1038772 - Remove Tech Preview text.
