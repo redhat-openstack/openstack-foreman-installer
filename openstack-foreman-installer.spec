@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	0.0.25
+Version:	1.0.0
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -66,6 +66,12 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Mon Dec 16 2013 Jason Guiditta <jguiditt@redhat.com> 1.0.0-1
+- BZ #1042933 - neutron-server fails to start (stamp issue)
+- BZ #1040610 Open Ceilometer API port on controller node 
+- BZ #1042862 Update RHEL OS description
+- BZ #1043634 Swift Storage manifest uses incorrect variable
+
 * Mon Dec 10 2013 Jason Guiditta <jguiditt@redhat.com> 0.0.25-1
 - BZ #1039661 Fix manifests to work with updated puppet modules
 - BZ #1039698 add IPAPPEND 2 to pxe template
