@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	1.0.0
+Version:	1.0.1
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -66,6 +66,10 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Fri Dec 20 2013 Crag Wolfe <cwolfe@redhat.com> 1.0.1-1
+- BZ #1045132 - l3 external_network_bridge now configurable.
+- BZ #1045137 - Ensure physical ports added to ovs bridge on networker.
+
 * Mon Dec 16 2013 Jason Guiditta <jguiditt@redhat.com> 1.0.0-1
 - BZ #1042933 - neutron-server fails to start (stamp issue)
 - BZ #1040610 Open Ceilometer API port on controller node 
