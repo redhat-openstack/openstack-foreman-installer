@@ -1,7 +1,7 @@
 %{?scl:%scl_package openstack-foreman-installer}
 %{!?scl:%global pkg_name %{name}}
 %global upstream_name astapor
-%global rel 1
+%global rel 2
 
 %global homedir /usr/share/openstack-foreman-installer
 
@@ -16,6 +16,7 @@ BuildArch:      noarch
 URL:		https://github.com/redhat-openstack/%{upstream_name}
 # source is in github, see corresponding git tags
 Source0: https://github.com/redhat-openstack/%{upstream_name}/archive/openstack-foreman-installer-%{version}.tar.gz
+Patch0: packages-puppet-3.4.patch
 
 Requires: %{?scl_prefix}ruby
 Requires: puppet >= 2.7
@@ -33,6 +34,8 @@ OpenStack.
 
 %prep
 %setup -n %{upstream_name}-%{pkg_name}-%{version} -q
+
+%patch0 -p1
 
 %build
 
@@ -66,6 +69,9 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Tue Jan 07 2014 Pádraig Brady <pbrady@redhat.com> 1.0.1-2
+- BZ #1048922 - Fix horizon packages install with puppet-3.4
+
 * Fri Dec 20 2013 Crag Wolfe <cwolfe@redhat.com> 1.0.1-1
 - BZ #1045132 - l3 external_network_bridge now configurable.
 - BZ #1045137 - Ensure physical ports added to ovs bridge on networker.
