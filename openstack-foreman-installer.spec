@@ -66,7 +66,7 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
-* Fri Jan 10 2013 Jason Guiditta <jguiditt@redhat.com> 1.0.2-1
+* Fri Jan 10 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.2-1
 - BZ #1048922 - Package name cannot have array for newer puppet.
 - BZ #1050182 - remove the Gluster Storage Host Group.
 - BZ #1049688 - Quickstack manifest parameter renaming.
