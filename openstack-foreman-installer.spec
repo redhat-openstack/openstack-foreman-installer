@@ -1,12 +1,12 @@
 %{?scl:%scl_package openstack-foreman-installer}
 %{!?scl:%global pkg_name %{name}}
 %global upstream_name astapor
-%global rel 2
+%global rel 1
 
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	1.0.1
+Version:	1.0.2
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -16,7 +16,6 @@ BuildArch:      noarch
 URL:		https://github.com/redhat-openstack/%{upstream_name}
 # source is in github, see corresponding git tags
 Source0: https://github.com/redhat-openstack/%{upstream_name}/archive/openstack-foreman-installer-%{version}.tar.gz
-Patch0: packages-puppet-3.4.patch
 
 Requires: %{?scl_prefix}ruby
 Requires: puppet >= 2.7
@@ -34,8 +33,6 @@ OpenStack.
 
 %prep
 %setup -n %{upstream_name}-%{pkg_name}-%{version} -q
-
-%patch0 -p1
 
 %build
 
@@ -69,6 +66,14 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Fri Jan 10 2013 Jason Guiditta <jguiditt@redhat.com> 1.0.2-1
+- BZ #1048922 - Package name cannot have array for newer puppet.
+- BZ #1050182 - remove the Gluster Storage Host Group.
+- BZ #1049688 - Quickstack manifest parameter renaming.
+- BZ #1046120 - Remove unused parameter bridge_keep_ip.
+- BZ #1015625 - Add selinux support for glusterfs config.
+- BZ #1043964 - Fix to move neutron setup after db setup.
+
 * Tue Jan 07 2014 Pádraig Brady <pbrady@redhat.com> 1.0.1-2
 - BZ #1048922 - Fix horizon packages install with puppet-3.4
 
