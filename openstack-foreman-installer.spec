@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	1.0.2
+Version:	1.0.3
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -66,6 +66,10 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Wed Jan 15 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.3-1
+- BZ #1047653 - Cinder LVM setup broken.
+- BZ #1053729 - Add missed parameter name change.
+
 * Fri Jan 10 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.2-1
 - BZ #1048922 - Package name cannot have array for newer puppet.
 - BZ #1050182 - remove the Gluster Storage Host Group.
