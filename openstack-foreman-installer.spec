@@ -87,7 +87,7 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 
 * Mon Dec 16 2013 Jason Guiditta <jguiditt@redhat.com> 1.0.0-1
 - BZ #1042933 - neutron-server fails to start (stamp issue)
-- BZ #1040610 Open Ceilometer API port on controller node 
+- BZ #1040610 Open Ceilometer API port on controller node
 - BZ #1042862 Update RHEL OS description
 - BZ #1043634 Swift Storage manifest uses incorrect variable
 
