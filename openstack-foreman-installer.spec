@@ -19,7 +19,7 @@ Source0: https://github.com/redhat-openstack/%{upstream_name}/archive/openstack-
 
 Requires: %{?scl_prefix}ruby
 Requires: puppet >= 2.7
-Requires: packstack-modules-puppet
+Requires: openstack-puppet-modules
 Requires: foreman >= 1.1
 Requires: foreman-mysql >= 1.1
 Requires: foreman-installer >= 1.3
