@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	1.0.3
+Version:	1.0.4
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -66,6 +66,22 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Fri Feb 14 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.4-1
+- BZ #1054181 - Set OS description consistently, install LSB.
+- BZ #1052408 - HA Mysql manifest: allow creation of neutron db user.
+- BZ #1055852 - HTTP 500 Error using Neutron metadata agent.
+- BZ #1056892 - Handle interface names containing ".".
+- BZ #1049633 - Foreman should support VXLAN.
+- BZ #1017281 - Add support for ML2 Core Plugin.
+- BZ #1056055 - Create cinder-volumes VG backed by a loopback file.
+- BZ #1062664 - Configure qpid_hostname for Controller host groups.
+- BZ #1062670 - Add tuned configuration for compute nodes.
+- BZ #1056383 - Foreman Controller's swift proxy no longer runs.
+- BZ #1055207 - Add localhost and ip access for Horizon UI.
+- BZ #1063514 - cinder_gluster_servers default value.
+- BZ #998599  - Add options for SSL support using files or FreeIPA.
+- BZ #1054498 - Fix double port 80 directives in apache.
+
 * Wed Jan 15 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.3-1
 - BZ #1047653 - Cinder LVM setup broken.
 - BZ #1053729 - Add missed parameter name change.
