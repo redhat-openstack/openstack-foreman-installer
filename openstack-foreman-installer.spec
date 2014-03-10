@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	1.0.4
+Version:	1.0.5
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -66,6 +66,9 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Mon Mar 10 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.5-1
+- BZ #1062701 -  Allow configuration of network_managers with nova networking.
+
 * Fri Feb 14 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.4-1
 - BZ #1054181 - Set OS description consistently, install LSB.
 - BZ #1052408 - HA Mysql manifest: allow creation of neutron db user.
