@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	1.0.5
+Version:	2.0.0beta1
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -66,6 +66,17 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Fri Mar 21 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.0beta1-1
+- BZ #1049079 - Use openstack-puppet-modules package.
+- BZ #1049121 - Fixes for Ha/Mysql hostgroup.
+- BZ #1075818 - Create New HA All-In-One Controller Hostgroup.
+- BZ #1075818 - Add HaProxy module managed by pacemaker.
+- BZ #1049122 - Add Qpid module managed by pacemaker.
+- Add Base Pacemaker module, with fencing configuration.
+- Add more flexible provisioning configuration.
+- BZ #1068885 - Add option to create a keystonerc_admin file.
+- Add admin_host network, defaults to private_host.
+
 * Mon Mar 10 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.5-1
 - BZ #1062701 -  Allow configuration of network_managers with nova networking.
 
