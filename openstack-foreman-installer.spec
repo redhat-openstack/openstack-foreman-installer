@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.0beta1
+Version:	2.0.0beta2
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -66,6 +66,12 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Mon Mar 31 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.0beta2-1
+- BZ #1082811 - Add Keystone Service to HA hostgroup.
+- BZ #1053623 - openstack-selinux package not installed
+- BZ #1064056 - Foreman Heat ports not opened
+- Cisco plugin fixes.
+
 * Fri Mar 21 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.0beta1-1
 - BZ #1049079 - Use openstack-puppet-modules package.
 - BZ #1049121 - Fixes for Ha/Mysql hostgroup.
