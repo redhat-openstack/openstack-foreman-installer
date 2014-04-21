@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.0beta4
+Version:	2.0.0beta5
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -66,6 +66,11 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Fri Apr 11 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.0beta5-1
+- BZ #1038766 - Qpid username and password.
+- BZ #1086344 - Add Cinder service to HA hostgroup.
+- BZ #1083781 - fetch glance user password from pacemaker::params
+
 * Thu Apr 10 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.0beta4-1
 - BZ #1075818 - Create New Hostgroup to enable HA deployments.
 - BZ #1073087 - [RFE] Use subscription-manager.
