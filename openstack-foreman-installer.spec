@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.0beta2
+Version:	2.0.0beta3
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -66,6 +66,10 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Fri Apr 4 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.0beta3-1
+- BZ #1083781 - Add Glance Service to HA hostgroup.
+- BZ #1082811 - HA Keystone improvements.
+
 * Mon Mar 31 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.0beta2-1
 - BZ #1082811 - Add Keystone Service to HA hostgroup.
 - BZ #1053623 - openstack-selinux package not installed
