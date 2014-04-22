@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	1.0.5
+Version:	1.0.6
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -66,6 +66,43 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Mon Apr 21 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.6-1
+- BZ #1033247 - Global Booleans for Specifying Service Deployment.
+- BZ #1049079 - Use openstack-puppet-modules package.
+- BZ #1049121 - Install a Highly Available OpenStack deployment using Foreman
+  (HA/mysql).
+- BZ #1049122 - Install a Highly Available OpenStack deployment using Foreman
+  (qpid).
+- BZ #1052408 - HA Mysql manifest: allow creation of neutron db user.
+- BZ #1053623 - openstack-selinux package is not installed on foreman_clients.
+- BZ #1056992 - Foreman will use bridge map even after it is removed from
+  neutron networker parameter.
+- BZ #1062699 - Foreman should allow for cinder share mount options.
+- BZ #1063425 - Provide option to set bind_host/bind_port for API services.
+- BZ #1064056 - Foreman Heat ports not opened in a foreman based Nova network
+  install.
+- BZ #1068885 - Foreman-installer doesn't create keystonerc_admin file on
+  controller.
+- BZ #1073087 - [RFE] Use subscription-manager in kickstart template, not
+  rhnreg_ks.
+- BZ #1075818 - Create New Hostgroup to enable HA deployments.
+- BZ #1076205 - In the HA All-in-One Host Group provide the ability to
+  disable a given service.
+- BZ #1077818 - Modify installer to accept environment variable for Foreman
+  provisioning interface.
+- BZ #1078279 - Pull latest Cisco Nexus updates.
+- BZ #1080646 - admin_password not set in /etc/neutron/metadata_agent.ini.
+- BZ #1082811 - Add Keystone Service to HA hostgroup.
+- BZ #1083781 - Add Glance Service to HA hostgroup.
+- BZ #1084534 - Add Nova Service to HA hostgroup.
+- BZ #1085547 - Keystone role is created as _member_ instead of Member.
+- BZ #1086344 - Add Cinder service to HA hostgroup.
+- BZ #1086934 - Add Horizon service to HA hostgroup.
+- BZ #1087713 - Add Swift Proxy service to HA hostgroup.
+- BZ #1088139 - Add HA Mysql A/P to HA hostgroup.
+- BZ #1088608 - Add Neutron Service to HA hostgroup.
+- BZ #1088611 - Add Heat Service to HA hostgroup.
+
 * Mon Mar 10 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.5-1
 - BZ #1062701 -  Allow configuration of network_managers with nova networking.
 
