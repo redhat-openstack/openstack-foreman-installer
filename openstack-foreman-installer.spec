@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	1.0.6
+Version:	1.0.7
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -66,6 +66,11 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Wed Apr 30 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.7-1
+- BZ #1068885 - Fix url in keystonerc.
+- BZ #1062699 - Cinder + GlusterFS mount options on HA controller.
+- HA general bug fixes, better stonith support
+
 * Mon Apr 21 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.6-1
 - BZ #1033247 - Global Booleans for Specifying Service Deployment.
 - BZ #1049079 - Use openstack-puppet-modules package.
