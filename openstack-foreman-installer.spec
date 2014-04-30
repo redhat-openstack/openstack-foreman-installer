@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.0beta5
+Version:	2.0.0.0
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -66,6 +66,12 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Fri Apr 25 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.0.0-1
+- Bugfixes for HA controllers.
+- Add support for Foreman 1.5
+- Ceilometer/mongo fix.
+- Add _network params to deduce ip per machine.
+
 * Fri Apr 11 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.0beta5-1
 - BZ #1038766 - Qpid username and password.
 - BZ #1086344 - Add Cinder service to HA hostgroup.
