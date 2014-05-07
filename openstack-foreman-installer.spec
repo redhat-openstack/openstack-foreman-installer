@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	1.0.7
+Version:	1.0.8
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -66,6 +66,13 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Wed May 07 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.8-1
+- NFS backend for Cinder on HA controller.
+- Fix cinder-volume to be managed by pacemaker.
+- Fix Neutron to use bind_host for HA.
+- Work around Pacemaker bug where multiple calls to create a resource could
+  fail.
+
 * Wed Apr 30 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.7-1
 - BZ #1068885 - Fix url in keystonerc.
 - BZ #1062699 - Cinder + GlusterFS mount options on HA controller.
