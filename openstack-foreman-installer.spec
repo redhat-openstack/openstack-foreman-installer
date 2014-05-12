@@ -66,7 +66,7 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
-* Fri May 97 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.9-1
+* Fri May 09 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.9-1
 - Bug Fixes for configuration of HA Neutron
 
 * Wed May 07 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.8-1
