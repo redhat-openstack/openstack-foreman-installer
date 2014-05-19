@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	1.0.9
+Version:	1.0.10
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -23,7 +23,6 @@ Requires: openstack-puppet-modules
 Requires: foreman >= 1.1
 Requires: foreman-mysql >= 1.1
 Requires: foreman-installer >= 1.3
-Requires: foreman-plugin-simplify
 Requires: mysql-server
 Requires: augeas
 
@@ -66,6 +65,12 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Mon May 19 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.10-1
+- BZ #1094029 - Bug fix: numeric mysql password causes error.
+- BZ #1097826 - SElinux - rsync /etc/keystone/ssl error.
+- BZ #1095853 - Remove simplify plugin dep.
+- BZ #1088608 - Neutron HA tweaks.
+
 * Fri May 09 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.9-1
 - Bug Fixes for configuration of HA Neutron
 
@@ -80,6 +85,14 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 - BZ #1068885 - Fix url in keystonerc.
 - BZ #1062699 - Cinder + GlusterFS mount options on HA controller.
 - HA general bug fixes, better stonith support
+
+* Thu Apr 24 2014 Mike Burns <mburns@redhat.com> 1.0.6-2
+- Fix unescaped backslash in S sequense
+- Fix uncapitalized reference
+- fix get_nic_from_network
+- Open firewall for rsync
+- install and run rpcbind
+- fix ha swift proxy and storage node
 
 * Mon Apr 21 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.6-1
 - BZ #1033247 - Global Booleans for Specifying Service Deployment.
