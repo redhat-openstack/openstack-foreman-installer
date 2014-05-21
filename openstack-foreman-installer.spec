@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.0.0
+Version:	2.0.1
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -66,6 +66,13 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Wed May 21 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.1-1
+- More Bugfixes for HA controllers.
+- Initial Gluster Storage hostgroup.
+- Parameter cleanups/changes.
+- NFS and Gluster backends for Cinder.
+- Switch from mysql to mariadb.
+
 * Fri Apr 25 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.0.0-1
 - Bugfixes for HA controllers.
 - Add support for Foreman 1.5
