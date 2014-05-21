@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	1.0.10
+Version:	1.0.11
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -65,6 +65,9 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Tue May 21 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.11-1
+- BZ #1099661 - Remove unused ceilometer_host_param.
+
 * Mon May 19 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.10-1
 - BZ #1094029 - Bug fix: numeric mysql password causes error.
 - BZ #1097826 - SElinux - rsync /etc/keystone/ssl error.
