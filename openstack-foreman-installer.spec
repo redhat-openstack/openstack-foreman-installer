@@ -65,6 +65,9 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Thu May 22 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.12-1
+- BZ #1100411 - Ceilometer starts before mongo is ready.
+
 * Tue May 21 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.11-1
 - BZ #1099661 - Remove unused ceilometer_host_param.
 
@@ -178,7 +181,7 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 - BZ #1042862 Update RHEL OS description
 - BZ #1043634 Swift Storage manifest uses incorrect variable
 
-* Mon Dec 10 2013 Jason Guiditta <jguiditt@redhat.com> 0.0.25-1
+* Tue Dec 10 2013 Jason Guiditta <jguiditt@redhat.com> 0.0.25-1
 - BZ #1039661 Fix manifests to work with updated puppet modules
 - BZ #1039698 add IPAPPEND 2 to pxe template
 - BZ #1040021 Fix enable/disable of heat_cfg and heat_cloudwatch
