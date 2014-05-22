@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	1.0.11
+Version:	1.0.12
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -68,7 +68,7 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 * Thu May 22 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.12-1
 - BZ #1100411 - Ceilometer starts before mongo is ready.
 
-* Tue May 21 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.11-1
+* Wed May 21 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.11-2
 - BZ #1099661 - Remove unused ceilometer_host_param.
 
 * Mon May 19 2014 Jason Guiditta <jguiditt@redhat.com> 1.0.10-1
