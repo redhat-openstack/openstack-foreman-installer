@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.1
+Version:	2.0.2
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -66,6 +66,11 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Thu May 29 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.2-1
+- Bugfix: Ceilometer starts before mongo is ready.
+- Bugfix: Puppet agent fails to run because fencing was off.
+- Initial RabbitMQ support (non-HA).
+
 * Wed May 21 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.1-1
 - More Bugfixes for HA controllers.
 - Initial Gluster Storage hostgroup.
