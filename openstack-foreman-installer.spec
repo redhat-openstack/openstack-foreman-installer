@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.2
+Version:	2.0.3
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -66,6 +66,17 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Tue Jun 03 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.3-1
+- Add galera server host group (standalone db, not HA).
+- Improve check for all nodes to join cluster.
+- BZ #1055179 - Rename LVM  Block Storage to Cinder Block storage.
+- BZ #1103353 -  Failure during the deployment of glance(utf8).
+- BZ #1103315 - Openstack firewall rules are not enabled after reboot.
+- BZ #1103271 - Puppet modules need to handle missing openstack-selinux
+  gracefully.
+- More robust updating of custom pcs properties.
+- BZ #1104093 -  Foreman default config is NOT ML2.
+
 * Thu May 29 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.2-1
 - Bugfix: Ceilometer starts before mongo is ready.
 - Bugfix: Puppet agent fails to run because fencing was off.
