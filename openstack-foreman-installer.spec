@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.3
+Version:	2.0.4
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -66,6 +66,10 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Fri Jun 06 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.4-1
+- Fix file name for storage_backend::cinder.
+- Get Pacemaker operational on RHEL 7 (basics).
+
 * Tue Jun 03 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.3-1
 - Add galera server host group (standalone db, not HA).
 - Improve check for all nodes to join cluster.
