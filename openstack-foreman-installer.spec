@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.4
+Version:	2.0.5
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -66,6 +66,11 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Mon Jun 09 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.5-1
+- BZ #1106517 - Fix file_line changes to horizon.
+- Handle differing crm_node output for el6 and el7.
+- ML2 icehouse fix.
+
 * Fri Jun 06 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.4-1
 - Fix file name for storage_backend::cinder.
 - Get Pacemaker operational on RHEL 7 (basics).
