@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.5
+Version:	2.0.6
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -66,6 +66,15 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Fri Jun 13 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.6-1
+- Neutron and ML2 fixes, default changes.
+- Firewall port fix for gre.
+- Add Dell EqualLogic backend for Cinder.
+- Multi backend support for support for cinder.
+- NFS support for cinder.
+- HA settings for Keystone and memcached.
+- RHEL 7 ipmilan tweaks.
+
 * Mon Jun 09 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.5-1
 - BZ #1106517 - Fix file_line changes to horizon.
 - Handle differing crm_node output for el6 and el7.
