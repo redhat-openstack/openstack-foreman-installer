@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.6
+Version:	2.0.7
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -66,6 +66,16 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/database.yml
 
 %changelog
+* Wed Jun 18 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.7-1
+- BZ #1109311 - Re-add openstack-selinux to deployment.
+- BZ #1109250 - auditd not enabled by default.
+- BZ #1109329 - Start ceilometer notification agent service.
+- BZ #1104219 - Update HA Nova support for Icehouse.
+- Pacemaker config cleanup for HA.
+- Add script to push values into Foreman.
+- BZ #1110504 - nfs-utils missing, cinder can't mount nfs share.
+- Ensure Cinder enabled_backends is empty when it should.
+
 * Fri Jun 13 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.6-1
 - Neutron and ML2 fixes, default changes.
 - Firewall port fix for gre.
