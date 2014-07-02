@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.7
+Version:	2.0.11
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -40,6 +40,7 @@ OpenStack.
 install -d -m 0755 %{buildroot}%{homedir}
 install -d -m 0755 %{buildroot}%{homedir}/bin
 install -m 0755 bin/foreman-setup.rb %{buildroot}%{homedir}/bin
+install -m 0755 bin/quickstack_defaults.rb %{buildroot}%{homedir}/bin
 install -m 0644 bin/seeds.rb %{buildroot}%{homedir}/bin
 install -m 0755 bin/foreman_server.sh %{buildroot}%{homedir}/bin
 install -m 0644 bin/foreman-params.json %{buildroot}%{homedir}/bin
@@ -48,6 +49,7 @@ cp -Rp puppet/modules/* %{buildroot}%{homedir}/puppet/modules/
 install -d -m 0755 %{buildroot}%{homedir}/config
 install -m 0644 config/broker-ruby %{buildroot}%{homedir}/config
 install -m 0644 config/database.yml %{buildroot}%{homedir}/config
+install -m 0644 config/quickstack.yaml.erb %{buildroot}%{homedir}/config
 install -m 0775 config/dbmigrate %{buildroot}%{homedir}/config
 install -d -m 0755 %{buildroot}%{homedir}/puppet
 
@@ -55,6 +57,7 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/
 %{homedir}/bin/
 %{homedir}/bin/foreman-setup.rb
+%{homedir}/bin/quickstack_defaults.rb
 %{homedir}/bin/seeds.rb
 %{homedir}/bin/foreman_server.sh
 %{homedir}/bin/foreman-params.json
@@ -64,8 +67,43 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/broker-ruby
 %{homedir}/config/dbmigrate
 %{homedir}/config/database.yml
+%{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Sun Jun 29 2014 Crag Wolfe <cwolfe@redhat.com> 2.0.11-1
+- rm services no longer in howto, neutron-server now a/a
+- neutron param defaults that do not cause breakeage
+- puppet dep fix
+- RabbitMQ HA support
+
+* Thu Jun 26 2014 Crag Wolfe <cwolfe@redhat.com> 2.0.10-2
+- Add start-delay to galera (mysqld) pacemaker resource
+- Add monitor_params for pacemaker resources
+- Ceph RBD changes for HA manifests
+- Ceph RBD backend support in glance and cinder
+- Disable repo for rabbitmq
+- BZ #1110310 - no more ovs core plugin
+
+* Wed Jun 25 2014 Crag Wolfe <cwolfe@redhat.com> 2.0.9-1
+- BZ #1110773 - ML2 l2population is missing from plugin.ini config
+- HAProxy config for galera must use httpchk
+- Rename amqp_server parameter to amqp_provider instead
+- remove obsolete A/P mysql manifest/vars from pacemaker
+- Added list_params feature and refactored
+- BZ #1111656 - Horizon puppet error for HA-all-in-one-controller
+- Included quickstack::load_balancer::common
+- Add DHCP support to bridge script and usage
+- Dell EqualLogic Multi-Instance Cinder Support
+
+* Fri Jun 20 2014 Crag Wolfe <cwolfe@redhat.com> 2.0.8-1
+- Refactored quickstack_defaults.rb
+- tighten dependencies for keystone and heat
+- Fix galera typo
+- Fix galera rsync
+- Use galera in HA all-in-one host group
+- BZ #1111158 - Install the ceilometer alarm evaluator and notifier services
+- haproxy configured and running before mysql, keystone, etc
+
 * Wed Jun 18 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.7-1
 - BZ #1109311 - Re-add openstack-selinux to deployment.
 - BZ #1109250 - auditd not enabled by default.
