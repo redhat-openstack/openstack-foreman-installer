@@ -1,12 +1,12 @@
 %{?scl:%scl_package openstack-foreman-installer}
 %{!?scl:%global pkg_name %{name}}
 %global upstream_name astapor
-%global rel 1
+%global rel 2
 
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.11
+Version:	2.0.12
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -49,6 +49,7 @@ cp -Rp puppet/modules/* %{buildroot}%{homedir}/puppet/modules/
 install -d -m 0755 %{buildroot}%{homedir}/config
 install -m 0644 config/broker-ruby %{buildroot}%{homedir}/config
 install -m 0644 config/database.yml %{buildroot}%{homedir}/config
+install -m 0644 config/hostgroups.yaml %{buildroot}%{homedir}/config
 install -m 0644 config/quickstack.yaml.erb %{buildroot}%{homedir}/config
 install -m 0775 config/dbmigrate %{buildroot}%{homedir}/config
 install -d -m 0755 %{buildroot}%{homedir}/puppet
@@ -67,9 +68,16 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/broker-ruby
 %{homedir}/config/dbmigrate
 %{homedir}/config/database.yml
+%{homedir}/config/hostgroups.yaml
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Thu Jul 03 2014 Crag Wolfe <cwolfe@redhat.com> 2.0.12-2
+- Add 10s delay to horizon for consistentency with other services
+- kvm config in compute nodes by puppet fact
+- a less fragile check for cluster_control_ip in pcmk setup
+- HA add constraints, start-delays for cinder, glance, heat
+
 * Sun Jun 29 2014 Crag Wolfe <cwolfe@redhat.com> 2.0.11-1
 - rm services no longer in howto, neutron-server now a/a
 - neutron param defaults that do not cause breakeage
