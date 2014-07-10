@@ -1,12 +1,12 @@
 %{?scl:%scl_package openstack-foreman-installer}
 %{!?scl:%global pkg_name %{name}}
 %global upstream_name astapor
-%global rel 2
+%global rel 1
 
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.12
+Version:	2.0.13
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,13 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Thu Jul 10 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.13-1
+- Change network_floating_range default (nova).
+- BZ #1113294 - HA cinder db_sync fails on 2nd and 3rd nodes.
+- Remove neutron-db-check, refs to neutron-agents-pre from HA neutron.
+- Value interpretation improved for yaml seeding.
+- Fix File dep issue for gluster on compute.
+
 * Thu Jul 03 2014 Crag Wolfe <cwolfe@redhat.com> 2.0.12-2
 - Add 10s delay to horizon for consistentency with other services
 - kvm config in compute nodes by puppet fact
