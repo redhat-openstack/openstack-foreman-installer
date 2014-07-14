@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.13
+Version:	2.0.14
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,12 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Mon Jul 14 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.14-1
+- Nova Networking - Set network_size to empty by default.
+- Open port 9200 for galera monitor.
+- BZ #1118513 - Rsync Get errors with exit code 23.
+- BZ #1118826 - Trying to use vlan with Neutron fails install.
+
 * Thu Jul 10 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.13-1
 - Change network_floating_range default (nova).
 - BZ #1113294 - HA cinder db_sync fails on 2nd and 3rd nodes.
