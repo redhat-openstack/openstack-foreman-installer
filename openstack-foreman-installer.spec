@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.14
+Version:	2.0.15
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,12 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Tue Jul 15 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.15-1
+- Refactor amqp provider selection for HA deployment.
+- BZ #1119429 - name rabbitmq nodes with short hostnames.
+- BZ #1119485 - Set start-delay on httpd monitor.
+- BZ #1118067 - Intermittent incompletion of puppet run on compute nodes.
+
 * Mon Jul 14 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.14-1
 - Nova Networking - Set network_size to empty by default.
 - Open port 9200 for galera monitor.
