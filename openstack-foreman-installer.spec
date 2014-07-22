@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.15
+Version:	2.0.16
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,11 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Tue Jul 22 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.16-1
+- Move params.pp to use class params.
+- BZ #1120288 - Avoid race condition in rabbitmq clustering.
+- BZ #1121760 - Run clustercheck before setting galera property.
+
 * Tue Jul 15 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.15-1
 - Refactor amqp provider selection for HA deployment.
 - BZ #1119429 - name rabbitmq nodes with short hostnames.
