@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.16
+Version:	2.0.17
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,14 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Thu Jul 31 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.17-1
+- BZ#1121185 - rabbitmq AMQP traffic should be load balanced across all nodes.
+- Use 60 second timeout for galera proxy.
+- BZ#1122314 - RabbitMQ clustering fails depending on which node has the VIP.
+- ceph/rbd updates and minor fixes to config.
+- BZ#1124950 - Quickstack nova compute manifest not setting qpid config.
+- controller_common: fixed rabbitmq provider parameters handling for glance.
+
 * Tue Jul 22 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.16-1
 - Move params.pp to use class params.
 - BZ #1120288 - Avoid race condition in rabbitmq clustering.
