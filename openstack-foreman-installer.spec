@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.17
+Version:	2.0.18
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,15 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Thu Aug 7 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.18-1
+- BZ #1123316 - Add nova-conductor with nova-scheduler to colocation constraint.
+- ceph/rbd on compute: add missiing nova.conf param.
+- BZ #1123293 - start-failure-is-fatal should be true.
+- BZ #1123318 - HA: set max_retries=-1 for accessing the DB.
+- BZ #1127816 - HA neutron sets pcs properties before starting service.
+- BZ #1127736 - Do not provide a default for network_public_network.
+- BZ #1127887 -  HA: rsync not installed on non-galera bootstrap nodes.
+
 * Thu Jul 31 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.17-1
 - BZ#1121185 - rabbitmq AMQP traffic should be load balanced across all nodes.
 - Use 60 second timeout for galera proxy.
