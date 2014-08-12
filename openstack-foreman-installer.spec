@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.18
+Version:	2.0.19
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,14 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Tue Aug 12 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.19-1
+- BZ #1123300 - haproxy check options missing interval parameter.
+- BZ #1123314 - pacemaker heat op monitor interval to 60s.
+- BZ #1127862 - ceph client packages (compute, non-ha and ha controller).
+- BZ #1126583 -  Unable to connect to instances via VNC.
+- BZ #1123312 - increase galera pacemaker start timeout.
+- BZ #1129227 - Set l3 external_network_bridge to ''.
+
 * Thu Aug 7 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.18-1
 - BZ #1123316 - Add nova-conductor with nova-scheduler to colocation constraint.
 - ceph/rbd on compute: add missiing nova.conf param.
