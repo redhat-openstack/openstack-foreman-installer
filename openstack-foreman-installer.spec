@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.19
+Version:	2.0.20
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,15 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Wed Aug 13 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.20-1
+- BZ #1120602 - Add neutron-agent-cleanup ocf resources to Pacemaker config.
+- BZ #1128457 - Horizon dashboard -> Not Found.
+- BZ #1123301 - nova-metadata VIP/listener is missing on port 8775 in
+  haproxy.cfg.
+- BZ #1122701 - Incoming ports are wide open.
+- BZ #1128361 - Correctly check for openstack-heat-engine service.
+- BZ #1125301 - Add heat-engine to cloudwatch colo constraint.
+
 * Tue Aug 12 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.19-1
 - BZ #1123300 - haproxy check options missing interval parameter.
 - BZ #1123314 - pacemaker heat op monitor interval to 60s.
