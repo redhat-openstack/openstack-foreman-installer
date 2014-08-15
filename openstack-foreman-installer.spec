@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.20
+Version:	2.0.21
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,10 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Fri Aug 15 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.21-1
+- BZ #1130304 - nfs-utils should be installed before using nfs.
+- BZ #1129896 - HA: openstack-heat-engine fails to start.
+
 * Wed Aug 13 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.20-1
 - BZ #1120602 - Add neutron-agent-cleanup ocf resources to Pacemaker config.
 - BZ #1128457 - Horizon dashboard -> Not Found.
