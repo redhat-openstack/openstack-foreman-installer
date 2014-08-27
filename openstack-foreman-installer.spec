@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.21
+Version:	2.0.22
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,9 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Wed Aug 27 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.22-1
+- BZ #1132155 - galera stopped before pcs resource added.
+
 * Fri Aug 15 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.21-1
 - BZ #1130304 - nfs-utils should be installed before using nfs.
 - BZ #1129896 - HA: openstack-heat-engine fails to start.
