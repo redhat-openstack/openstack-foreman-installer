@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.22
+Version:	2.0.23
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,12 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Mon Sep 8 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.23-1
+- BZ #1126447 - Fix nova scheduler constraints for A/P.
+- Add facts for host pacemaker properties.
+- BZ #1127863 - ceph client config.
+- BZ #1123303 - Add manage_service settings to get puppet out of the way.
+
 * Wed Aug 27 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.22-1
 - BZ #1132155 - galera stopped before pcs resource added.
 
