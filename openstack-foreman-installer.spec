@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.23
+Version:	2.0.24
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,11 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Tue Sep 16 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.24-1
+- BZ #1132722 - Cinder volume active/active should be avoided.
+- BZ #1123296 - increase rabbitmq haproxy timeout.
+- BZ #1135732 - puppet dep cycle error with rbd glance backend.
+
 * Mon Sep 8 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.23-1
 - BZ #1126447 - Fix nova scheduler constraints for A/P.
 - Add facts for host pacemaker properties.
