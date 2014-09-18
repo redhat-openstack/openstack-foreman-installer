@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.24
+Version:	2.0.25
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,9 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Thu Sep 18 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.25-1
+- BZ #1143311 - fix template for ceph rbd secret.
+
 * Tue Sep 16 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.24-1
 - BZ #1132722 - Cinder volume active/active should be avoided.
 - BZ #1123296 - increase rabbitmq haproxy timeout.
