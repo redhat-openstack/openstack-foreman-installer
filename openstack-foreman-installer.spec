@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.25
+Version:	2.0.26
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,9 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Fri Sep 19 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.26-1
+- BZ #1143311 - ensure libvirt started before set virsh secret.
+
 * Thu Sep 18 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.25-1
 - BZ #1143311 - fix template for ceph rbd secret.
 
