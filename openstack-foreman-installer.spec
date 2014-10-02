@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.26
+Version:	2.0.28
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,16 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Thu Oct 2 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.28-1
+- BZ #1121746 - Integrate n1kv installation with RHEL-OSP installer.
+- Add support for Cisco Nexus to HA Neutron.
+- BZ #1127236 - Create cron job to flush the keystone tokens.
+
+* Fri Sep 26 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.27-1
+- BZ #1142483 - osd pool size, journal size params in ceph.conf.
+- BZ #1142528 - open up ceph mon port on controllers.
+- BZ #1147077 - Explicitly require rabbitmq service before setting HA policy.
+
 * Fri Sep 19 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.26-1
 - BZ #1143311 - ensure libvirt started before set virsh secret.
 
