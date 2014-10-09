@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.28
+Version:	2.0.29
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,15 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Thu Oct 9 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.29-1
+- BZ #1131980 - Fix qpid configuration for Neutron Controllers.
+- BZ #1144050 - Create cinder backend types.
+- BZ #1124484 - Puppet fails on networker after br-ex is configured.
+- BZ #1150732 - Integrating n1kv installation with OSP HA.
+- BZ #1150246 - Galera+puppet stability improvements.
+- BZ #1149777 - Add host id to neutron.conf.
+- BZ #1151176 -  fence_xvm: expose port param, add firewall rule.
+
 * Thu Oct 2 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.28-1
 - BZ #1121746 - Integrate n1kv installation with RHEL-OSP installer.
 - Add support for Cisco Nexus to HA Neutron.
