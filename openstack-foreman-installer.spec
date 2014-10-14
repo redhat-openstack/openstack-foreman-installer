@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.29
+Version:	2.0.30
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,9 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Tue Oct 14 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.30-1
+- BZ #1150732 - Integrating n1kv installation with OS-HA in RHEL-OSP (bugfix).
+
 * Thu Oct 9 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.29-1
 - BZ #1131980 - Fix qpid configuration for Neutron Controllers.
 - BZ #1144050 - Create cinder backend types.
