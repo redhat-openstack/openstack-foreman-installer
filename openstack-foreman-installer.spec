@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.30
+Version:	2.0.31
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,9 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Thu Oct 23 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.31-1
+- BZ #1156183 - open ceph ports on ceph storage node
+
 * Tue Oct 14 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.30-1
 - BZ #1150732 - Integrating n1kv installation with OS-HA in RHEL-OSP (bugfix).
 
