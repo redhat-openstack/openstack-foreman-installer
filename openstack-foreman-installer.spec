@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.31
+Version:	2.0.32
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,10 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Mon Oct 27 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.32-1
+- BZ #1157340 - need to rerun puppet to deploy heat on HA Controller.
+- BZ #1156342 - Memcached port not being opened in HA deployments.
+
 * Thu Oct 23 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.31-1
 - BZ #1156183 - open ceph ports on ceph storage node
 
