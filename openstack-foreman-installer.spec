@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.29
+Version:	3.0.0
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -18,13 +18,13 @@ URL:		https://github.com/redhat-openstack/%{upstream_name}
 Source0: https://github.com/redhat-openstack/%{upstream_name}/archive/openstack-foreman-installer-%{version}.tar.gz
 
 Requires: %{?scl_prefix}ruby
-Requires: puppet >= 2.7
+Requires: puppet
 Requires: openstack-puppet-modules
-Requires: foreman >= 1.1
-Requires: foreman-mysql >= 1.1
-Requires: foreman-installer >= 1.3
+Requires: foreman
+Requires: foreman-postgresql
+Requires: foreman-installer
 Requires: foreman-plugin-simplify
-Requires: mysql-server
+Requires: mariadb-server
 Requires: augeas
 
 %description
@@ -72,6 +72,19 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Wed Nov 12 2014 Jason Guiditta <jguiditt@redhat.com> 3.0.0-1
+- Initial build for Juno, puppet modules not yet working
+
+* Mon Oct 27 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.32-1
+- BZ #1157340 - need to rerun puppet to deploy heat on HA Controller.
+- BZ #1156342 - Memcached port not being opened in HA deployments.
+
+* Thu Oct 23 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.31-1
+- BZ #1156183 - open ceph ports on ceph storage node
+
+* Tue Oct 14 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.30-1
+- BZ #1150732 - Integrating n1kv installation with OS-HA in RHEL-OSP (bugfix).
+
 * Thu Oct 9 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.29-1
 - BZ #1131980 - Fix qpid configuration for Neutron Controllers.
 - BZ #1144050 - Create cinder backend types.
