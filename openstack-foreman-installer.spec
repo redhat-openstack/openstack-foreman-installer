@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	3.0.0
+Version:	3.0.1
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -24,7 +24,7 @@ Requires: foreman
 Requires: foreman-postgresql
 Requires: foreman-installer
 Requires: foreman-plugin-simplify
-Requires: mariadb-server
+Requires: postgresql-server
 Requires: augeas
 
 %description
@@ -72,6 +72,13 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Wed Nov 19 2014 Jason Guiditta <jguiditt@redhat.com> 3.0.1-1
+- Update quickstack modules to work for juno
+- Change foreman_server.sh to use postgres.
+- Add Hiera YAML data.
+- BZ #1088613 - Add Ceilometer Service to HA hostgroup.
+- BZ #1084229 - Add support for configuring SSL for RabbitMQ.
+
 * Wed Nov 12 2014 Jason Guiditta <jguiditt@redhat.com> 3.0.0-1
 - Initial build for Juno, puppet modules not yet working
 
