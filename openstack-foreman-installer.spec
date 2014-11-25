@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	3.0.1
+Version:	3.0.2
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,17 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Tue Nov 25 2014 Jason Guiditta <jguiditt@redhat.com> 3.0.2-1
+- Equalogic default setting san_thin_provision should be true.
+- BZ #1165008 - Exposing quota related parameters in neutron.conf.
+- Fix typo in ceilometer notifier constraint name.
+- Use account security from mysql puppet to remove defaults.
+- Removed Puppet module NTP.
+- Add hostnames into /etc/hosts local to pacemaker cluster.
+- BZ #1151438: Add support for network_device_mtu and veth_mtu.
+- Switch to using galera resource agent.
+- BZ #1167414 - configure TCP keepalive setting.
+
 * Wed Nov 19 2014 Jason Guiditta <jguiditt@redhat.com> 3.0.1-1
 - Update quickstack modules to work for juno
 - Change foreman_server.sh to use postgres.
