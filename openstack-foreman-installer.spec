@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	3.0.2
+Version:	3.0.3
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,10 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Fri Nov 28 2014 Jiri Stransky <jistr@redhat.com> 3.0.3-1
+- BZ #1168433 - undefined method "to_a" for "ens7":String
+- Quickstack Hiera data adjustments
+
 * Tue Nov 25 2014 Jason Guiditta <jguiditt@redhat.com> 3.0.2-1
 - Equalogic default setting san_thin_provision should be true.
 - BZ #1165008 - Exposing quota related parameters in neutron.conf.
