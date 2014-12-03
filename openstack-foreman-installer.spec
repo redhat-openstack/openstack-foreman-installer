@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	3.0.3
+Version:	3.0.4
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,12 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Wed Dec 3 2014 Jason Guiditta <jguiditt@redhat.com> 3.0.4-1
+- BZ #1168270 -  Set allow_overlapping_ips to True for HA deployments by
+  default.
+- BZ #1168755 - rabbitmq fix node names.
+- Extra ordering enforcement for mongodb+ceilo.
+
 * Fri Nov 28 2014 Jiri Stransky <jistr@redhat.com> 3.0.3-1
 - BZ #1168433 - undefined method "to_a" for "ens7":String
 - Quickstack Hiera data adjustments
