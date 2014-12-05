@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	3.0.4
+Version:	3.0.5
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,9 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Fri Dec 5 2014 Jason Guiditta <jguiditt@redhat.com> 3.0.5-1
+- Juno stability fixes
+
 * Wed Dec 3 2014 Jason Guiditta <jguiditt@redhat.com> 3.0.4-1
 - BZ #1168270 -  Set allow_overlapping_ips to True for HA deployments by
   default.
