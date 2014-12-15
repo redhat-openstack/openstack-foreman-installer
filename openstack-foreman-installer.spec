@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	3.0.5
+Version:	3.0.6
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,11 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Mon Dec 15 2014 Jason Guiditta <jguiditt@redhat.com> 3.0.6-1
+- Longer default timeout for mongodb service.
+- BZ #1173217 - Errors in /var/log/ceilometer/collector.log.
+- BZ #1172366 - fix some pcmk constraints.
+
 * Fri Dec 5 2014 Jason Guiditta <jguiditt@redhat.com> 3.0.5-1
 - Juno stability fixes
 
