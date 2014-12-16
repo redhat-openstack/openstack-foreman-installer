@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	3.0.6
+Version:	3.0.7
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
