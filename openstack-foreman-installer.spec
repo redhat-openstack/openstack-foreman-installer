@@ -72,6 +72,11 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Tue Dec 16 2014 Jason Guiditta <jguiditt@redhat.com> 3.0.7-1
+- BZ #1174487 - default galera ssl setting to true.
+- Fix setting of auth_url from glance cache.
+- BZ #1173730 - allow separation of cluster and management networks.
+
 * Mon Dec 15 2014 Jason Guiditta <jguiditt@redhat.com> 3.0.6-1
 - Longer default timeout for mongodb service.
 - BZ #1173217 - Errors in /var/log/ceilometer/collector.log.
