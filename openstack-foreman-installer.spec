@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	3.0.7
+Version:	3.0.8
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,12 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Wed Dec 17 2014 Jason Guiditta <jguiditt@redhat.com> 3.0.8-1
+- BZ #1167414 - rabbitmq tcp keepalive.
+- BZ #1173730 - add default type for new cluster network params.
+- BZ #1159390 - Allow open_files_limit & max_connections to be set for galera.
+- BZ #1174955 - retry adding galera resource if needed.
+
 * Tue Dec 16 2014 Jason Guiditta <jguiditt@redhat.com> 3.0.7-1
 - BZ #1174487 - default galera ssl setting to true.
 - Fix setting of auth_url from glance cache.
