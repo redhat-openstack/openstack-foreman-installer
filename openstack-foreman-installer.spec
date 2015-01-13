@@ -72,7 +72,7 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
-* Tue Jan 13 2014 Jason Guiditta <jguiditt@redhat.com> 3.0.9-1
+* Tue Jan 13 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.9-1
 - BZ #1179969 - Integrating n1kv installation RHEL-OSP installer in OSP6.
 - BZ #1175869 - Change pcs resource creation to use interleave.
 - BZ #1176966 - Increase haproxy timeouts for galera proxy.
