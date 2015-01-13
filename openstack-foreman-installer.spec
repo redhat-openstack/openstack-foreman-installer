@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	3.0.8
+Version:	3.0.9
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,14 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Tue Jan 13 2014 Jason Guiditta <jguiditt@redhat.com> 3.0.9-1
+- BZ #1179969 - Integrating n1kv installation RHEL-OSP installer in OSP6.
+- BZ #1175869 - Change pcs resource creation to use interleave.
+- BZ #1176966 - Increase haproxy timeouts for galera proxy.
+- BZ #1180708 - Galera proxy should use 'on-marked-down shutdown-sessions'.
+- BZ #1175869 - Add constraints for safe reboots.
+- BZ #1170113 - Setting multiple active network nodes for Neutron HA.
+
 * Wed Dec 17 2014 Jason Guiditta <jguiditt@redhat.com> 3.0.8-1
 - BZ #1167414 - rabbitmq tcp keepalive.
 - BZ #1173730 - add default type for new cluster network params.
