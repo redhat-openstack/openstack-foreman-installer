@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	3.0.9
+Version:	3.0.10
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,10 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Wed Jan 14 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.10-1
+- BZ #1168755 - rabbitmqctl failure while setting HA policy
+- BZ #1175869 - Neutron haproxy config was broken.
+
 * Tue Jan 13 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.9-1
 - BZ #1179969 - Integrating n1kv installation RHEL-OSP installer in OSP6.
 - BZ #1175869 - Change pcs resource creation to use interleave.
