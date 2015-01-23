@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	3.0.10
+Version:	3.0.11
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,15 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Fri Jan 23 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.11-1
+- BZ #1182176: take account of quickstack::pacemaker::ceilometer::verbose
+  parameter.
+- BZ #1181796 - neutron 127.0.0.1 /etc/hosts workaround.
+- BZ #1182685 - params for Cinder NetApp driver.
+
+* Thu Jan 15 2015 Mike Burns <mburns@redhat.com> 3.0.10-2
+- BZ #1182673 - galera load balancer config should use port 9200
+
 * Wed Jan 14 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.10-1
 - BZ #1168755 - rabbitmqctl failure while setting HA policy
 - BZ #1175869 - Neutron haproxy config was broken.
