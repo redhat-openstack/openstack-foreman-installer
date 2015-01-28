@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	3.0.11
+Version:	3.0.12
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,10 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Wed Jan 28 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.12-1
+- BZ #1181864 - Installation of OFI displays incorrect admin credentials.
+- BZ #1182219 - Add role heat_stack_owner for admin user.
+
 * Fri Jan 23 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.11-1
 - BZ #1182176: take account of quickstack::pacemaker::ceilometer::verbose
   parameter.
