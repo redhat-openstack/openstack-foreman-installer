@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	3.0.13
+Version:	3.0.14
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,13 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Thu Feb 5 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.14-1
+- BZ #1181821 - L3-agent is not running in OSP6 beta Controllers (n1kv).
+- BZ #1168755 - Use the new rabbitmq resource agent.
+- BZ #1180286 - Unable to load openstack-dashboard - Bad Request (400) (n1kv).
+- BZ #1170113 - Make A/A neutron network services the default.
+- BZ #1186459 - Puppet param for multiple rabbit_hosts.
+
 * Wed Jan 28 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.13-1
 - BZ #1186378 - Change qpid defaults for newer qpid rpms.
 
