@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	3.0.14
+Version:	3.0.15
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,13 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Fri Feb 13 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.15-1
+- BZ #1190278 - Missing param ml2_vni_ranges in pacemaker::neutron.
+- BZ #1187144 - Add NTP configuration to all hostgroups.
+- BZ #1189935 - Providing cisco-n1kv mechanism driver support.
+- BZ #1190990 - Puppet restarts neutron server every run.
+- BZ #1190284 - update compute to use volume:cinder:internalURL.
+
 * Thu Feb 5 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.14-1
 - BZ #1181821 - L3-agent is not running in OSP6 beta Controllers (n1kv).
 - BZ #1168755 - Use the new rabbitmq resource agent.
