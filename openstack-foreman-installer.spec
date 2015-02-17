@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	3.0.15
+Version:	3.0.16
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,9 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Tue Feb 17 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.16-1
+- BZ #1193229 - make ONLY cinder-volume A/P.
+
 * Fri Feb 13 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.15-1
 - BZ #1190278 - Missing param ml2_vni_ranges in pacemaker::neutron.
 - BZ #1187144 - Add NTP configuration to all hostgroups.
