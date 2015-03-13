@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	3.0.16
+Version:	3.0.17
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,22 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Fri Mar 13 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.17-1
+- BZ #1195476 - Provisioning of NetApp Cinder fails.
+- BZ #1192862 - Glance fails to start with Ceph backend (missing known_stores).
+- BZ #1198032 - VRRP_Instance are on MASTER STATE on all controllers.
+- BZ #1192513 - Open firewall for ceilometer.
+- BZ #1189480 - Rabbitmq cluster remains partitioned after short network
+  partition incident.
+- BZ #1199266 - Compute nodes should not rely on ceph command.
+- BZ #1172315 - add support for keystone::ldap.
+- BZ #1191519 - Set LimitNOFILE for galera.
+- BZ #1199625 - additional ceph.conf settings.
+- BZ #1183840 - Automatically generating ceph keyring for object store.
+- BZ #1183839 - Generating ceph keyring for object store .
+- BZ #1200529 - Adding N1KV vif driver setting.
+- BZ #1189921 - Set constraints so haproxy starts after VIPs.
+
 * Tue Feb 17 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.16-1
 - BZ #1193229 - make ONLY cinder-volume A/P.
 
