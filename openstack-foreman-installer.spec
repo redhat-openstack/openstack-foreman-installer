@@ -72,6 +72,9 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Tue Mar 17 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.18-1
+- BZ #1202464 - Nova does not have database configuration.
+
 * Fri Mar 13 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.17-1
 - BZ #1195476 - Provisioning of NetApp Cinder fails.
 - BZ #1192862 - Glance fails to start with Ceph backend (missing known_stores).
