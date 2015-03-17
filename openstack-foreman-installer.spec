@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	3.0.17
+Version:	3.0.18
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -85,7 +85,7 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 - BZ #1199266 - Compute nodes should not rely on ceph command.
 - BZ #1172315 - add support for keystone::ldap.
 - BZ #1191519 - Set LimitNOFILE for galera.
-- BZ #1199625 - additional ceph.conf settings.
+- BZ #1186925 - additional ceph.conf settings.
 - BZ #1183840 - Automatically generating ceph keyring for object store.
 - BZ #1183839 - Generating ceph keyring for object store .
 - BZ #1200529 - Adding N1KV vif driver setting.
