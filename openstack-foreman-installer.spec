@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	3.0.18
+Version:	3.0.19
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,11 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Wed Mar 18 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.19-1
+- BZ #1179892 - Fix undefined method `to_a' on calling
+  produce_array_with_prefix.
+- BZ #1201363 - Changes in ipmi fencing configuration.
+
 * Tue Mar 17 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.18-1
 - BZ #1202464 - Nova does not have database configuration.
 
