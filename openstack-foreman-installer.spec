@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	3.0.20
+Version:	3.0.21
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,9 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Tue Mar 24 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.21-1
+- BZ #1195476 - Fix non-NFS NetApp deployments.
+
 * Tue Mar 24 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.20-1
 - BZ #1204483 - start+stop neutron-server on one node, first run.
 - BZ #1204647 - include http store in Glance configuration.
