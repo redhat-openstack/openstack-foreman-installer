@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	2.0.33
+Version:	2.0.34
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,9 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Wed Apr 8 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.34-1
+- BZ #1209628 - Constraint error on netns and ovs-cleanup.
+
 * Tue Apr 7 2014 Jason Guiditta <jguiditt@redhat.com> 2.0.33-1
 - Add support for setting a custom password for pacemaker clusters.
 
