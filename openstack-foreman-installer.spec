@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	3.0.22
+Version:	3.0.23
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,12 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Fri Apr 10 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.23-1
+- BZ #1197860 - rbd/libvirt secret.xml requires /etc/nova.
+- BZ #1149563 - Support for configuration of keyboard layout in nova.
+- BZ #1193448 - Introduce vncproxy_host parameter.
+- BZ #1207234 - Fix Multi-Backend NetApp Deployment.
+
 * Tue Mar 31 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.22-1
 - Enable override of pacemaker cluster password.
 
