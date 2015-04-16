@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	3.0.23
+Version:	3.0.24
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,11 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Fri Apr 16 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.24-1
+- BZ #1180597 - Enable keystone config for ceilometer by default.
+- BZ #1209099 - Set l2_pop correctly for ovs on control nodes.
+- BZ #1207234 - Check if nfs_shares parameter is array or string.
+
 * Fri Apr 10 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.23-1
 - BZ #1197860 - rbd/libvirt secret.xml requires /etc/nova.
 - BZ #1149563 - Support for configuration of keyboard layout in nova.
