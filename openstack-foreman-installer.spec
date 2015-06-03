@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	3.0.13
+Version:	4.0.0
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,9 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Wed Jun 3 2015 Jason Guiditta <jguiditt@redhat.com> 4.0.0-1
+- Initial compatibility with kilo build.
+
 * Wed Jan 28 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.13-1
 - BZ #1186378 - Change qpid defaults for newer qpid rpms.
 
