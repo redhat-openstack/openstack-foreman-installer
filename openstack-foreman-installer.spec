@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	4.0.0
+Version:	4.0.1
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,10 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Wed Jun 10 2015 Jason Guiditta <jguiditt@redhat.com> 4.0.1-1
+- Fix ceilometer+redis to use vip and have central be a/a.
+- Replace python-ceph package dependency with python-rbd.
+
 * Wed Jun 3 2015 Jason Guiditta <jguiditt@redhat.com> 4.0.0-1
 - Initial compatibility with kilo build.
 
