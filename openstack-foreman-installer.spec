@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	4.0.1
+Version:	4.0.2
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,20 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Thu Jun 25 2015 Jason Guiditta <jguiditt@redhat.com> 4.0.2-1
+- Add new interleave settings from ref arch.
+- Fix constraints to handle ceilometer-central with or without redis.
+- Set galera -> keystone constraint to promote.
+- Rabbitmq configured on all nodes before pacemaker starts it.
+- The manage_repos parameter is deprecated, switch to repos_ensure.
+- Puppet-keystone needs tenant/password for identity_service.
+- Updated rbd settings in compute's nova.conf.
+- Added support for Dell Storage Center Cinder Backend.
+- More robust setting of pcs properties.
+- Port quickstack to use newer puppet-neutron agent/plugin code.
+- Make sure vips are colo before the usual i-am-vip checks.
+- Use verify_on_create with pcmk_resource.
+
 * Wed Jun 10 2015 Jason Guiditta <jguiditt@redhat.com> 4.0.1-1
 - Fix ceilometer+redis to use vip and have central be a/a.
 - Replace python-ceph package dependency with python-rbd.
