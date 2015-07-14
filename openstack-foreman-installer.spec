@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	4.0.2
+Version:	4.0.3
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,14 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Tue Jul 14 2015 Jason Guiditta <jguiditt@redhat.com> 4.0.3-1
+- BZ #1236180 - Missing redis-vip then ceilo-central pcs constraint.
+- BZ #1236685 - Add redhat_register snippet.
+- BZ #1240789 - Bump pacemaker start timeout for nova api, conductor.
+- BZ #1240362 - Update to compute node's cinder/catalog_info.
+- BZ #1241628 - Rabbitmq file descriptors.
+- Add PLUMgrid plugin support.
+
 * Thu Jun 25 2015 Jason Guiditta <jguiditt@redhat.com> 4.0.2-1
 - Add new interleave settings from ref arch.
 - Fix constraints to handle ceilometer-central with or without redis.
