@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	4.0.3
+Version:	4.0.4
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,13 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Thu Jul 30 2015 Jason Guiditta <jguiditt@redhat.com> 4.0.4-1
+- BZ #1206357 - keystone endpoint creation depends on vip.
+- BZ #1187831 - change from ["admin"] to admin heat_stack_owner failed.
+- BZ #1240826 - Increase the default max_connections for galera.
+- BZ #1244929 - Set maxconn for galera proxy sufficiently high.
+- BZ #1247684 - Puppet Errors with cinder Dell SC multibackend.
+
 * Tue Jul 14 2015 Jason Guiditta <jguiditt@redhat.com> 4.0.3-1
 - BZ #1236180 - Missing redis-vip then ceilo-central pcs constraint.
 - BZ #1236685 - Add redhat_register snippet.
