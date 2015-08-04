@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	4.0.4
+Version:	4.0.5
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,9 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Tue Aug 4 2015 Jason Guiditta <jguiditt@redhat.com> 4.0.5-1
+- BZ #1247684 - Netapp is always added to the enabled_backends.
+
 * Thu Jul 30 2015 Jason Guiditta <jguiditt@redhat.com> 4.0.4-1
 - BZ #1206357 - keystone endpoint creation depends on vip.
 - BZ #1187831 - change from ["admin"] to admin heat_stack_owner failed.
