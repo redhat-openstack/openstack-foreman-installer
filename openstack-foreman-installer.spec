@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	3.0.24
+Version:	3.0.25
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,14 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Thu Aug 6 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.25-1
+- BZ #1204881 - Move clone_opts and operation_opts from instance attributes.
+- BZ #1236685 - Add redhat_register snippet.
+- BZ #1187831 - change from ["admin"] to admin heat_stack_owner failed.
+- BZ #1206357 - keystone endpoint creation depends on vip.
+- BZ #1211781 - galera haproxy settings: add backup and higher stick.
+- BZ #1212580 - fix ceph mount parameter.
+
 * Thu Apr 16 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.24-1
 - BZ #1180597 - Enable keystone config for ceilometer by default.
 - BZ #1209099 - Set l2_pop correctly for ovs on control nodes.
