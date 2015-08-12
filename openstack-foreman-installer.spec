@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	3.0.25
+Version:	3.0.26
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,9 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Wed Aug 12 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.26-1
+- BZ #1220596 - Allow override of neutron load balancer timeouts.
+
 * Thu Aug 6 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.25-1
 - BZ #1204881 - Move clone_opts and operation_opts from instance attributes.
 - BZ #1236685 - Add redhat_register snippet.
