@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	4.0.6
+Version:	4.0.7
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,10 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Thu Sep 24 2015 Jason Guiditta <jguiditt@redhat.com> 4.0.7-1
+- BZ #1259495 Puppet fails when adding both Eqlx and Compellent as true.
+- Enable Neutron quota support in Horizon to work around bz1254780.
+
 * Wed Aug 12 2015 Jason Guiditta <jguiditt@redhat.com> 4.0.6-1
 - BZ #1220596 - Allow override of neutron load balancer timeouts.
 - Change session provider to uuid and add check.
