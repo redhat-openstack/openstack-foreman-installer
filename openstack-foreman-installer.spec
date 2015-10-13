@@ -12,7 +12,7 @@ Summary:	Installer & Configuration tool for OpenStack
 
 Group:		Applications/System
 License:	GPLv2
-BuildArch:      noarch
+ExclusiveArch:      x86_64
 URL:		https://github.com/redhat-openstack/%{upstream_name}
 # source is in github, see corresponding git tags
 Source0: https://github.com/redhat-openstack/%{upstream_name}/archive/openstack-foreman-installer-%{version}.tar.gz
