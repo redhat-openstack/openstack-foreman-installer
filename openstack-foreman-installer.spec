@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	4.0.7
+Version:	4.0.8
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,10 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Tue Oct 13 2015 Jason Guiditta <jguiditt@redhat.com> 4.0.8-1
+- BZ #1270288 - Remove neutron-scale resource to align with osp-d.
+- BZ #1270284 - Heat/Ceilometer HA constraints and configuration.
+
 * Thu Sep 24 2015 Jason Guiditta <jguiditt@redhat.com> 4.0.7-1
 - BZ #1259495 Puppet fails when adding both Eqlx and Compellent as true.
 - Enable Neutron quota support in Horizon to work around bz1254780.
