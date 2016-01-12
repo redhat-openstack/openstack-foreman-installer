@@ -6,7 +6,7 @@
 %global homedir /usr/share/openstack-foreman-installer
 
 Name:	%{?scl_prefix}openstack-foreman-installer
-Version:	3.0.26
+Version:	3.0.27
 Release:	%{rel}%{?dist}
 Summary:	Installer & Configuration tool for OpenStack
 
@@ -72,6 +72,10 @@ install -d -m 0755 %{buildroot}%{homedir}/puppet
 %{homedir}/config/quickstack.yaml.erb
 
 %changelog
+* Tue Jan 12 2016 Jason Guiditta <jguiditt@redhat.com> 3.0.27-1
+- BZ #1290684 - Replace regex to accommodate change in crm_mode output.
+- BZ #1292555 - Remove operator access from command.
+
 * Wed Aug 12 2015 Jason Guiditta <jguiditt@redhat.com> 3.0.26-1
 - BZ #1220596 - Allow override of neutron load balancer timeouts.
 
